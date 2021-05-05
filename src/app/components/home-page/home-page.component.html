@@ -1,4 +1,10 @@
-<div class="home-container">
-<app-cities></app-cities>
-<app-city-info></app-city-info>
+<div class="row">
+  <div class="col-4">
+    <app-cities (newCityEvent)="setCurrentCity($event)"></app-cities>
+  </div>
+  <div class="col-8">
+    <app-city-info *ngIf="currentCity" [city]="currentCity"></app-city-info>
+  </div>
 </div>
+
+

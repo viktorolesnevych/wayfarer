@@ -1,5 +1,15 @@
-.page-container{
-  height: 500px;
-  width: 700px;
-  background-color: lightslategrey;
+.container{
+  display: flex;
+  flex-direction: column;
+}
+
+span{
+  font-size: 23px;
+}
+
+.col-sm{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
 }
