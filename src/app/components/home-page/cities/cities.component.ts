@@ -9,6 +9,7 @@ import {City} from '../../../models/City';
 })
 export class CitiesComponent implements OnInit {
   cities: City[];
+  isCityChosen = false;
   @Output() newCityEvent = new EventEmitter<City>();
   constructor(private cityService: CityService) { }
 

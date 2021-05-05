@@ -1,13 +1,14 @@
 <div class="container ">
   <div class="head">
-    <h1 class="display-6">{{city.name}}</h1>
-    <h1 class="display-6">City Information</h1>
+    <h1 class="display-6 text-primary">{{city.name}}</h1>
+    <h1 class="display-6 text-secondary">City Information</h1>
   </div>
   <hr>
   <div class="row" >
     <div class="col-sm">
-      <h3>{{city.country}}</h3>
-      <h5>Currently 66F</h5>
+      <h3 class="text-info">{{city.country}}</h3>
+      <h5 class="text-secondary">Currently 66F</h5>
+      <a class="btn btn-danger">Click to expand info</a>
     </div>
     <div class="col-sm">
       <img src="/assets/{{city.name.toLowerCase()}}.jpeg" height="200px" width="400px">
@@ -15,4 +16,5 @@
   </div>
   <h4 class="display-6">Posts</h4>
   <hr>
+  <app-posts *ngIf="city.posts" [currentPosts]="city.posts"></app-posts>
 </div>

@@ -1,0 +1,7 @@
+.row{
+  display: flex;
+}
+.post-img{
+  height: 150px;
+  width: 200px;
+}
