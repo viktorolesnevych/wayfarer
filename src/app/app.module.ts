@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import {LandingPageModule} from './components/landing-page/landing-page.module';
+import {HomePageModule} from './components/home-page/home-page.module';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {LandingPageModule} from './components/landing-page/landing-page.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LandingPageModule
+    LandingPageModule,
+    HomePageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

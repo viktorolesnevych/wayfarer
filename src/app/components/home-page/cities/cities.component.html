@@ -1,1 +1,7 @@
-<p>cities works!</p>
+<div class="page-container">
+  <h1>CITIES</h1>
+  <div class="container" *ngFor="let city of cities">
+    <img src="/assets/chicago.jpeg" height="100px">
+    <span class="span">{{city.name}}</span>
+  </div>
+</div>
