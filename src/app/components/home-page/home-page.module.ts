@@ -6,6 +6,7 @@ import { PostsComponent } from './posts/posts.component';
 import { HomePageComponent } from './home-page.component';
 import { RedHoverDirective } from './red-hover.directive';
 import {AppRoutingModule} from '../../app-routing.module';
+import { PostComponent } from './post/post.component';
 
 
 
@@ -16,6 +17,7 @@ import {AppRoutingModule} from '../../app-routing.module';
     PostsComponent,
     HomePageComponent,
     RedHoverDirective,
+    PostComponent,
   ],
   exports: [
     HomePageComponent

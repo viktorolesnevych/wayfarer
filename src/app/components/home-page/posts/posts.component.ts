@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Post} from '../../../models/Post';
+import {City} from '../../../models/City';
 
 @Component({
   selector: 'app-posts',
@@ -8,7 +9,7 @@ import {Post} from '../../../models/Post';
 })
 export class PostsComponent implements OnInit {
   @Input()
-  currentPosts: Post[];
+  currentCity: City;
   constructor() { }
 
   ngOnInit(): void {
