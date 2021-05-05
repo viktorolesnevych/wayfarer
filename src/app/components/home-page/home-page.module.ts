@@ -5,6 +5,7 @@ import { CityInfoComponent } from './city-info/city-info.component';
 import { PostsComponent } from './posts/posts.component';
 import { HomePageComponent } from './home-page.component';
 import { RedHoverDirective } from './red-hover.directive';
+import {AppRoutingModule} from '../../app-routing.module';
 
 
 
@@ -14,13 +15,14 @@ import { RedHoverDirective } from './red-hover.directive';
     CityInfoComponent,
     PostsComponent,
     HomePageComponent,
-    RedHoverDirective
+    RedHoverDirective,
   ],
   exports: [
     HomePageComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    AppRoutingModule
   ]
 })
 export class HomePageModule { }
