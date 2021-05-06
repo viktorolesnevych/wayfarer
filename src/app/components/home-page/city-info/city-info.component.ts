@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {City} from '../../../models/City';
 import {ActivatedRoute} from '@angular/router';
 import {CityService} from '../../../services/city.service';
+import {WeatherService} from '../../../services/weather.service';
 
 @Component({
   selector: 'app-city-info',
@@ -12,16 +13,27 @@ export class CityInfoComponent implements OnInit {
 
   // input can be used to grab city from home-page (1st approach)
   @Input() city: City;
-  constructor(private route: ActivatedRoute, private cityService: CityService) { }
+  weather: any;
+  constructor(private route: ActivatedRoute, private cityService: CityService, private weatherService: WeatherService) { }
 
   ngOnInit(): void {
     this.route.paramMap
       .subscribe(params => {
         this.city = this.cityService.getCities().find(city => {
           return city.name === params.get('city-name');
-          console.log(city.name);
         });
+        this.getTemperatureOnlyForCity(this.city.name);
       });
+
+  }
+
+  getTemperatureOnlyForCity(city: string): void{
+    if (city.includes('-')) {
+      city = city.replace('-', '+');
+    }
+    this.weatherService.getWeatherByCityName(city).subscribe(response => {
+      this.weather =  response;
+  });
   }
 
 }
