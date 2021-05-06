@@ -25,7 +25,6 @@ export class CityInfoComponent implements OnInit {
         });
         this.getTemperatureOnlyForCity(this.city.name);
       });
-
   }
 
   getTemperatureOnlyForCity(city: string): void{

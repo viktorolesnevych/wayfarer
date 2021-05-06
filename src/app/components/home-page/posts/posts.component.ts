@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Post} from '../../../models/Post';
 import {City} from '../../../models/City';
 
@@ -7,17 +7,19 @@ import {City} from '../../../models/City';
   templateUrl: './posts.component.html',
   styleUrls: ['./posts.component.css']
 })
-export class PostsComponent implements OnInit {
+export class PostsComponent implements OnInit, OnChanges {
   @Input()
   currentCity: City;
   resultPosts: string[];
   constructor() { }
 
   ngOnInit(): void {
-    console.log('APP POSTS INIT');
-    this.getCreatedDate(this.currentCity.posts);
-    console.log('POSTS RESULT: ' + this.resultPosts);
+
   }
+  ngOnChanges(changes: SimpleChanges): void {
+    this.getCreatedDate(this.currentCity.posts);
+  }
+
   getCreatedDate(posts: Post[]): void{
     this.resultPosts = [];
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
