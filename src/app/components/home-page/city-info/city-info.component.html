@@ -8,7 +8,12 @@
     <div class="col-sm">
       <h3 class="text-info">{{city.country}}</h3>
       <h6 *ngIf="weather" class="text-secondary">Currently {{weather.main.temp.toString().split('.')[0]}}F</h6>
-      <a class="btn btn-danger">Click to expand info</a>
+      <p *ngIf="weather && weatherInfoDetails[0]" class="text-secondary">Today {{weather.weather[0].description}} in {{city.name}}.
+        Max temperature is {{weather.main.temp_max.toString().split('.')[0]}}F and min close to
+        {{weather.main.temp_min.toString().split('.')[0]}}F. Wind speed is {{weather.wind.speed}} and
+        humidity around {{weather.main.humidity}}.
+      </p>
+      <a class="btn btn-danger" (click)="weatherDetails()">{{weatherInfoDetails[1]}}</a>
     </div>
     <div class="col-sm">
       <img src="/assets/{{city.name.toLowerCase()}}.jpeg" height="200px" width="400px">

@@ -22,7 +22,7 @@ export class PostsComponent implements OnInit, OnChanges {
       this.message = message;
       if (this.message) {
         this.displayedPosts = this.currentCity.posts.filter(post =>
-          post.title.includes(this.message) || post.description.includes(this.message));
+          post.title.toLowerCase().includes(this.message) || post.description.toLowerCase().includes(this.message));
       }
       else{
         this.displayedPosts = this.currentCity.posts;
@@ -30,19 +30,21 @@ export class PostsComponent implements OnInit, OnChanges {
     });
     this.data.changeMessage('');
   }
+  // basically using to update VIEW when changing the city
   ngOnChanges(changes: SimpleChanges): void {
-    this.displayedPosts = this.currentCity.posts;
-    this.sortPostsByDate();
-    this.getCreatedDate(this.currentCity.posts);
+    this.displayedPosts = this.currentCity.posts; // changing posts VIEW
+    this.sortPostsByDate(); // sorting post when changing city
+    this.getCreatedDate(this.currentCity.posts); // to change -created on- text when changing city
+    this.data.changeMessage(''); // to clear -searching for- text when changing city
   }
 
+  // Forms new array with easy to understand (2 days ago) dates
   getCreatedDate(posts: Post[]): void{
     this.resultPostsDates = [];
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December'
     ];
     const today = new Date();
-    console.log('DATE: ' + today.getUTCMinutes() + ':' + today.getUTCSeconds());
     posts.forEach(post => {
       const created = new Date(post.dateCreated);
       if (created.getFullYear() === today.getFullYear()){
@@ -61,8 +63,6 @@ export class PostsComponent implements OnInit, OnChanges {
     this.currentCity.posts.sort( (a, b) => {
       const aDate = new Date(a.dateCreated);
       const bDate = new Date(b.dateCreated);
-      console.log(`A TIME: ${aDate.getTime()}`);
-      console.log(`B TIME: ${bDate.getTime()}`);
       if (aDate.getTime() > bDate.getTime()){
         return -1;
       }

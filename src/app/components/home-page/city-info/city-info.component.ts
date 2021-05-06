@@ -14,26 +14,33 @@ export class CityInfoComponent implements OnInit {
   // input can be used to grab city from home-page (1st approach)
   @Input() city: City;
   weather: any;
-  constructor(private route: ActivatedRoute, private cityService: CityService, private weatherService: WeatherService) { }
+  weatherInfoDetails = [false, 'Click for more'];
+
+  constructor(private route: ActivatedRoute, private cityService: CityService, private weatherService: WeatherService) {
+  }
 
   ngOnInit(): void {
-    console.log("CITY INFO INIT");
     this.route.paramMap
       .subscribe(params => {
         this.city = this.cityService.getCities().find(city => {
           return city.name === params.get('city-name');
         });
-        this.getTemperatureOnlyForCity(this.city.name);
+        this.getWeatherForCity(this.city.name);
       });
   }
 
-  getTemperatureOnlyForCity(city: string): void{
+  getWeatherForCity(city: string): void {
     if (city.includes('-')) {
       city = city.replace('-', '+');
     }
     this.weatherService.getWeatherByCityName(city).subscribe(response => {
-      this.weather =  response;
-  });
+      this.weather = response;
+    });
+  }
+  // Will change button captions and show/hide paragraph about weather detailed
+  weatherDetails(): void{
+    this.weatherInfoDetails = this.weatherInfoDetails[0] === true ?
+      [false, 'Click for more'] : [true, 'Hide'];
   }
 
 }

@@ -1,5 +1,5 @@
 <div class="container">
-  <h6 *ngIf="message" class="text-danger text-end">searching for "{{message}}"</h6>
+  <h6 *ngIf="message" class="text-danger text-end">searching for "{{message}}" (results: {{displayedPosts.length}})</h6>
   <div class="row mb-4" *ngFor="let post of displayedPosts, let i = index">
     <div class="col-3">
       <img class="post-img" src="{{post.img}}">
