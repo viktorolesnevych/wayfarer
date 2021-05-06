@@ -36,7 +36,7 @@ export const CITIES: City[] = [
         img: 'https://cdn.britannica.com/69/156369-050-75E7FD08/skyline-Dubai-United-Arab-Emirates.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
       },
       {
-        id: 8, author: 'andrew$$', dateCreated: 'March 17, 2020 21:24:00', title: 'Best hotel ever',
+        id: 8, author: 'andrew$$', dateCreated: 'May 4, 2021 21:24:00', title: 'Best hotel ever',
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG6zXrDBX4vOkwd3JxOwNIXMH__LGgzrb8OM4q9vo8ojXFX-dj1EofqX-2aSDDsvnqCjQ&usqp=CAU', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
       },
     ]},
