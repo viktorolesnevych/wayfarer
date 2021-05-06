@@ -8,11 +8,10 @@
       </ul>
 
       <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
-        <input type="search" placeholder="Search..." class="form-control form-control-dark">
+        <input [(ngModel)]="searchStr" [ngModelOptions]="{standalone: true}" type="search" placeholder="Search..." class="form-control form-control-dark">
       </form>
-
       <div class="text-end">
-        <button type="button" class="btn btn-warning">Find</button>
+        <button type="button" (click)="newMessage()" class="btn btn-warning">Find</button>
       </div>
     </div>
   </div>

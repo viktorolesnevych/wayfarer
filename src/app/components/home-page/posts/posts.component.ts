@@ -1,6 +1,7 @@
 import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {Post} from '../../../models/Post';
 import {City} from '../../../models/City';
+import {DataService} from '../../../services/data.service';
 
 @Component({
   selector: 'app-posts',
@@ -11,9 +12,12 @@ export class PostsComponent implements OnInit, OnChanges {
   @Input()
   currentCity: City;
   resultPostsDates: string[];
-  constructor() { }
+  message: string;
+  constructor(private data: DataService) { }
 
   ngOnInit(): void {
+    this.data.currentMessage.subscribe(message => this.message = message);
+    this.data.changeMessage('');
   }
   ngOnChanges(changes: SimpleChanges): void {
     this.sortPostsByDate();
