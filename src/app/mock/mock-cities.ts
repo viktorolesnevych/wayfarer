@@ -41,5 +41,14 @@ export const CITIES: City[] = [
       },
     ]},
   { id: 4, name: 'Chicago', country: 'United States', imgLink: '', posts: [] },
-  { id: 5, name: 'Paris', country: 'France', imgLink: '', posts: [] }
+  { id: 5, name: 'Paris', country: 'France', imgLink: '', posts: [] },
+  { id: 6, name: 'Gibraltar', country: 'United Kingdom', imgLink: '', posts: [{
+      id: 9, author: 'frank3204', dateCreated: 'April 30, 2021 10:24:00', title: 'Gorgeous sunrise here',
+      img: 'https://media.istockphoto.com/photos/landscape-with-the-rock-of-gibraltar-in-the-background-picture-id485262202?k=6&m=485262202&s=612x612&w=0&h=bNBrYqh4WL6VybQKjkorexGxHmJSkjt5rORTxF1ufhk=', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
+    },
+      {
+        id: 10, author: 'john_richardson', dateCreated: 'February 20, 2021 09:12:00', title: 'Fabulous photo zone',
+        img: 'https://cdn2.wanderlust.co.uk/media/1192/dreamstime_l_17793244.jpg?anchor=center&mode=crop&width=1920&height=858&format=auto&rnd=131455360000000000', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
+      },
+    ]},
 ];

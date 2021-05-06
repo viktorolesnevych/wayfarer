@@ -1,6 +1,6 @@
 <div class="container ">
   <div class="head">
-    <h1 class="display-6 text-primary">{{city.name}}</h1>
+    <h1 class="display-6 text-primary fw-bold">{{city.name}}</h1>
     <h1 class="display-6 text-secondary">City Information</h1>
   </div>
   <hr>
@@ -8,7 +8,7 @@
     <div class="col-sm">
       <h3 class="text-info">{{city.country}}</h3>
       <h6 *ngIf="weather" class="text-secondary">Currently {{weather.main.temp.toString().split('.')[0]}}F</h6>
-      <p *ngIf="weather && weatherInfoDetails[0]" class="text-secondary">Today {{weather.weather[0].description}} in {{city.name}}.
+      <p *ngIf="weather && weatherInfoDetails[0]" class="text-secondary">Today {{weather.weather[0].description}} in {{weather.name}}.
         Max temperature is {{weather.main.temp_max.toString().split('.')[0]}}F and min close to
         {{weather.main.temp_min.toString().split('.')[0]}}F. Wind speed is {{weather.wind.speed}} and
         humidity around {{weather.main.humidity}}.
