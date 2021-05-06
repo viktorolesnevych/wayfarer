@@ -11,15 +11,27 @@ import {DataService} from '../../../services/data.service';
 export class PostsComponent implements OnInit, OnChanges {
   @Input()
   currentCity: City;
+
+  displayedPosts: Post[];
   resultPostsDates: string[];
   message: string;
   constructor(private data: DataService) { }
 
   ngOnInit(): void {
-    this.data.currentMessage.subscribe(message => this.message = message);
+    this.data.currentMessage.subscribe(message => {
+      this.message = message;
+      if (this.message) {
+        this.displayedPosts = this.currentCity.posts.filter(post =>
+          post.title.includes(this.message) || post.description.includes(this.message));
+      }
+      else{
+        this.displayedPosts = this.currentCity.posts;
+        }
+    });
     this.data.changeMessage('');
   }
   ngOnChanges(changes: SimpleChanges): void {
+    this.displayedPosts = this.currentCity.posts;
     this.sortPostsByDate();
     this.getCreatedDate(this.currentCity.posts);
   }
