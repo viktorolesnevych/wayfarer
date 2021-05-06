@@ -10,24 +10,32 @@ import {City} from '../../../models/City';
 export class PostsComponent implements OnInit {
   @Input()
   currentCity: City;
+  resultPosts: string[];
   constructor() { }
 
   ngOnInit(): void {
+    console.log('APP POSTS INIT');
+    this.getCreatedDate(this.currentCity.posts);
+    console.log('POSTS RESULT: ' + this.resultPosts);
   }
-  getCreatedDate(post: Post): string{
+  getCreatedDate(posts: Post[]): void{
+    this.resultPosts = [];
     const monthNames = ['January', 'February', 'March', 'April', 'May', 'June',
       'July', 'August', 'September', 'October', 'November', 'December'
     ];
-    const created = new Date(post.dateCreated);
     const today = new Date();
-    if (created.getFullYear() === today.getFullYear()){
+    console.log('DATE: ' + today.getUTCMinutes() + ':' + today.getUTCSeconds());
+    posts.forEach(post => {
+      const created = new Date(post.dateCreated);
+      if (created.getFullYear() === today.getFullYear()){
       if (created.getMonth() === today.getMonth()){
-        return `${(today.getDay() - created.getDay())} days ago`;
+        this.resultPosts.push(`${(today.getDay() - created.getDay())} days ago`);
       }else{
-        return `${(today.getMonth() - created.getMonth())} months ago`;
+        this.resultPosts.push(`${(today.getMonth() - created.getMonth())} months ago`);
       }
     }else{
-      return `${monthNames[created.getMonth() - 1]} ${created.getDay()}, ${created.getFullYear()}`;
+        this.resultPosts.push(`${monthNames[created.getMonth() - 1]} ${created.getDay()}, ${created.getFullYear()}`);
     }
+  });
   }
 }

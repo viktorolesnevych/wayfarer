@@ -17,6 +17,7 @@ export class CityInfoComponent implements OnInit {
   constructor(private route: ActivatedRoute, private cityService: CityService, private weatherService: WeatherService) { }
 
   ngOnInit(): void {
+    console.log("CITY INFO INIT");
     this.route.paramMap
       .subscribe(params => {
         this.city = this.cityService.getCities().find(city => {

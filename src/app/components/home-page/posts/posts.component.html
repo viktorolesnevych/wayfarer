@@ -1,12 +1,12 @@
 <div class="container">
-  <div class="row mb-4" *ngFor="let post of currentCity.posts">
+  <div class="row mb-4" *ngFor="let post of currentCity.posts, let i = index">
     <div class="col-3">
       <img class="post-img" src="{{post.img}}">
     </div>
     <div class="col-9">
       <h3 class="display-7"><a class="link-dark" routerLink="/cities/{{currentCity.name}}/posts/{{post.id}}">{{post.title}}</a></h3>
       <p>{{post.description}}</p>
-      <small class="text-muted">{{getCreatedDate(post)}}</small>
+      <small *ngIf="resultPosts" class="text-muted">{{resultPosts[i]}}</small>
     </div>
   </div>
 </div>
