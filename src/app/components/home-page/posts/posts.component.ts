@@ -21,21 +21,31 @@ export class PostsComponent implements OnInit, OnChanges {
     this.data.currentMessage.subscribe(message => {
       this.message = message;
       if (this.message) {
-        this.displayedPosts = this.currentCity.posts.filter(post =>
-          post.title.toLowerCase().includes(this.message) || post.description.toLowerCase().includes(this.message));
+        this.displayedPosts = [...this.currentCity.posts.filter(post =>
+          post.title.toLowerCase().includes(this.message) || post.description.toLowerCase().includes(this.message))];
       }
       else{
-        this.displayedPosts = this.currentCity.posts;
+        this.displayedPosts = [...this.currentCity.posts];
         }
     });
     this.data.changeMessage('');
   }
   // basically using to update VIEW when changing the city
   ngOnChanges(changes: SimpleChanges): void {
-    this.displayedPosts = this.currentCity.posts; // changing posts VIEW
     this.sortPostsByDate(); // sorting post when changing city
     this.getCreatedDate(this.currentCity.posts); // to change -created on- text when changing city
     this.data.changeMessage(''); // to clear -searching for- text when changing city
+    // this.showPostByLength();
+  }
+
+  showPostByLength(): void{
+    this.displayedPosts.forEach(post1 => {
+      if (post1.description.length > 150){
+        post1.description = `${post1.description.substring(0, 149)}.......`;
+      }
+    }); // checking for post length (if more then 150 displaying description till 150th letter)
+    console.log(`DISPLAY: ${this.displayedPosts[0].description.toString()}`);
+    console.log(`ACTUAL: ${this.currentCity.posts[0].description.toString()}`);
   }
 
   // Forms new array with easy to understand (2 days ago) dates
