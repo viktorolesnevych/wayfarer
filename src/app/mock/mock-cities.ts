@@ -40,9 +40,33 @@ export const CITIES: City[] = [
         img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTG6zXrDBX4vOkwd3JxOwNIXMH__LGgzrb8OM4q9vo8ojXFX-dj1EofqX-2aSDDsvnqCjQ&usqp=CAU', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
       },
     ]},
-  { id: 4, name: 'Chicago', country: 'United States', imgLink: '', posts: [] },
-  { id: 5, name: 'Paris', country: 'France', imgLink: '', posts: [] },
-  { id: 6, name: 'Gibraltar', country: 'United Kingdom', imgLink: '', posts: [{
+  { id: 4, name: 'Chicago', country: 'United States', imgLink: '', posts: [{
+      id: 11, author: 'frank3204', dateCreated: 'May 30, 2020 10:24:00', title: 'Great restaurants street',
+      img: 'https://cdn.vox-cdn.com/thumbor/NTStm2FDiD8aSZ_w6ZgwIZftfLk=/540x440:3490x2321/1200x675/filters:focal(1681x1192:2239x1750)/cdn.vox-cdn.com/uploads/chorus_image/image/65879138/shutterstock_1395061058.0.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
+    },
+      {
+        id: 12, author: 'john_richardson', dateCreated: 'February 20, 2021 09:12:00', title: 'Great stadium here',
+        img: 'https://media.timeout.com/images/105666938/image.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
+      },
+      {
+        id: 13, author: 'andrew$$', dateCreated: 'May 4, 2021 21:24:00', title: 'Experience outdoor attractions ',
+        img: 'https://cdn.choosechicago.com/uploads/2019/06/CC_summer-runners-1-900x599.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
+      },
+    ]},
+  { id: 5, name: 'Paris', country: 'France', imgLink: '', posts: [{
+      id: 14, author: 'frank3204', dateCreated: 'April 30, 2020 10:24:00', title: 'Best view in my life ever',
+      img: 'https://media.tacdn.com/media/attractions-splice-spp-674x446/07/03/1c/9c.jpg', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
+    },
+      {
+        id: 15, author: 'john_richardson', dateCreated: 'May 5, 2020 09:12:00', title: 'Favorite museum of all times',
+        img: 'https://q-xx.bstatic.com/xdata/images/hotel/840x460/210768979.jpg?k=8c5a446976bf74a068d77c5e1dcf37158b9625883dd99ff46175fa6d263836e2&o=', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
+      },
+      {
+        id: 16, author: 'andrew$$', dateCreated: 'May 4, 2021 21:24:00', title: 'Charming city view',
+        img: 'https://lp-cms-production.imgix.net/image_browser/Arc%20de%20Triomphe%20-%20Paris%20highlights.jpg?format=auto', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
+      },
+    ]},
+  { id: 6, name: 'Gibraltar', country: 'British Overseas Territory', imgLink: '', posts: [{
       id: 9, author: 'frank3204', dateCreated: 'April 30, 2021 10:24:00', title: 'Gorgeous sunrise here',
       img: 'https://media.istockphoto.com/photos/landscape-with-the-rock-of-gibraltar-in-the-background-picture-id485262202?k=6&m=485262202&s=612x612&w=0&h=bNBrYqh4WL6VybQKjkorexGxHmJSkjt5rORTxF1ufhk=', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci at aut, error est eum id, illo in incidunt ipsum laborum nam neque nihil odit quae repellendus, rerum totam ut voluptatem!'
     },

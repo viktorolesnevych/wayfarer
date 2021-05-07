@@ -54,7 +54,7 @@ export class PostsComponent implements OnInit, OnChanges {
         this.resultPostsDates.push(`${(today.getMonth() - created.getMonth())} months ago`);
       }
     }else{
-        this.resultPostsDates.push(`${monthNames[created.getMonth() - 1]} ${created.getDay()}, ${created.getFullYear()}`);
+        this.resultPostsDates.push(`${monthNames[created.getMonth()]} ${created.getDate()}, ${created.getFullYear()}`);
     }
   });
   }
